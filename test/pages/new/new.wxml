@@ -1,0 +1,44 @@
+<!--pages/new/new.wxml-->
+<text>pages/new/new.wxml</text>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<button bind:tap="press">点击按钮</button>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<button id="abc" open-type="share">分享按钮</button>
+<view>pages/new/new.wxml</view>
+<button open-type="share">分享按钮</button>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+<view>pages/new/new.wxml</view>
+
+

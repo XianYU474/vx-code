@@ -1,0 +1,128 @@
+<!--pages/view/view.wxml-->
+
+<!-- 搜索框 -->
+<view class="header" style="height: 46rpx; display: block; box-sizing: border-box">
+  <view class="search">
+    <!-- 左侧红色图标 -->
+    <image class="search-icon" src="/images/music/logo.png"></image> 
+    <!-- 搜索输入框 -->
+    <input 
+      bindinput="inputchange" 
+      placeholder="最近大家都在听: 当爱已成往事 李宗盛" 
+    />
+  </view>
+</view>
+
+  <!-- 轮播图 -->
+<swiper class="swiBox" autoplay
+ indicator-dots
+ indicator-color
+ indicator-active-color="red"
+ current="0"
+ interval="5000"
+ duration="500"
+ circular
+ display-multiple-items="1">
+<swiper-item class="swiItem"><image src="/images/music/不潮不用花钱.png" mode="aspectFill"></image></swiper-item>
+<swiper-item class="swiItem"><image src="/images/music/半岛铁盒.png" mode="aspectFill"></image></swiper-item>
+<swiper-item class="swiItem"><image src="/images/music/普通朋友.png" mode="aspectFill"></image></swiper-item>
+<swiper-item class="swiItem"><image src="/images/music/江南.jpg" mode="aspectFill"></image></swiper-item>
+<swiper-item class="swiItem"><image src="/images/music/爱我还是他.jpg" mode="aspectFill"></image></swiper-item>
+<swiper-item class="swiItem"><image src="/images/music/红尘客栈.jpg" mode="aspectFill"></image></swiper-item>
+</swiper>
+
+<!-- 推荐歌手 -->
+
+
+<!--下面新增按钮区域 -->
+<view class="singer-btn-section">
+  <!-- 横向滑动容器 -->
+  <scroll-view 
+  class="singer-scroll" 
+  scroll-x          
+  enhanced          
+  show-scrollbar="{{false}}"
+  enable-flex
+  style="height: 88rpx; display: flex; box-sizing: border-box">
+  <!-- 循环渲染按钮 -->
+  <view 
+    class="singer-btn" 
+    wx:for="{{singerList}}" 
+    wx:key="index"
+    bindtap="onSingerTap"  
+    style="height: 80rpx; display: block; box-sizing: border-box">
+    {{item}}
+  </view>
+</scroll-view>
+</view>
+
+
+<!-- 甄选歌单模块 -->
+
+
+<view class="playlist-section">
+  <!-- 模块标题 -->
+  <text class="playlist-title">甄选歌曲</text>
+
+  <!-- 横向滑动容器 -->
+  <scroll-view 
+    class="playlist-scroll" 
+    scroll-x          
+    enhanced         
+    show-scrollbar="{{false}}" 
+    enable-flex
+  >
+    <!-- 循环渲染6个歌单项 -->
+    <view class="playlist-item" wx:for="{{playlist}}" wx:key="index">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+      <text class="playlist-text">{{item.text}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+
+<!-- “你常听的”模块 -->
+
+<view class="new-song-section">
+  <!-- 标题 -->
+  <view class="section-header">
+    <text class="section-title">你常听的</text>
+    <text class="more-btn">></text>
+  </view>
+
+  <!-- 滚动容器：scroll-view 必须设置固定高度才能滚动 -->
+  <scroll-view 
+    scroll-y="true" 
+    class="song-scroll"
+  >
+    <view class="song-list">
+      <!-- 循环渲染歌曲数据 -->
+      <view class="song-item" wx:for="{{songList}}" wx:key="index">
+        <!-- 封面图 -->
+        <image 
+          class="song-cover" 
+          src="{{item.cover}}"
+        ></image>
+
+          <!-- 文字信息 -->
+      <view class="song-info">
+      <text class="song-name">{{item.title}}</text>
+      <text class="song-tag" wx:if="{{item.tag}}">{{item.tag}}</text>
+      <text class="song-desc">{{item.desc}}</text>
+      <text class="song-singer">{{item.singer}}</text>
+      </view>
+
+        <!-- 播放按钮 -->
+        <image 
+          class="play-icon" 
+          src="/images/图标/play.png"  
+          bindtap="playSong"
+          data-index="{{index}}"
+        ></image>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<import src="/pages/footer.wxml"/>
+<template is="footer"/>

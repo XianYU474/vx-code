@@ -1,0 +1,59 @@
+<!--pages/jay/jay.wxml-->
+<view class="jay-container">
+  <!-- 关闭按钮：跳转到 tabBar 页面 view -->
+  <navigator 
+    url="/pages/view/view"
+    open-type="switchTab"     
+    class="close-btn"          
+  >❌</navigator>
+<view class="jay-container">
+  <!-- 顶部背景 + 悬浮卡片 -->
+  <view class="jay-header">
+    <!-- 背景图 -->
+    <image class="header-bg" src="/images/背景.jpg"></image>
+    <!-- 悬浮艺人卡片 -->
+    <view class="jay-card">
+      <text class="name">周杰伦</text>
+      <text class="en-name">Jay Chou</text>
+      <text class="fans">1599.2万 粉丝</text>
+      <text class="tags">歌手、作词、作曲、编曲、制作人、乐手</text>
+      <view class="follow-row">
+        <button class="follow-btn" disabled style="position: relative; left: 180rpx; top: -110rpx">已关注</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门作品轮播区 -->
+  <view class="hot-section" style="height: 400rpx; display: block; box-sizing: border-box">
+    <text class="section-title">TA的热门作品</text>
+    <!-- 横向轮播图 -->
+    <swiper 
+      class="work-swiper" 
+      scroll-x          
+      enable-flex       
+      autoplay          
+      circular         
+      indicator-dots="{{false}}" 
+    >
+      <block wx:for="{{hotWorks}}" wx:key="id">
+        <swiper-item class="work-item">
+          <image class="cover" src="{{item.cover}}"></image>
+          <text class="work-name">{{item.name}}</text>
+          <text class="comment-tag" wx:if="{{item.comment}}">{{item.comment}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 播放按钮 -->
+    <button class="play-btn" bindtap="playAll">播放</button>
+  </view>
+
+  <!-- 艺人百科 -->
+  <view class="bio-section" style="height: 478rpx; display: block; box-sizing: border-box">
+    <text class="bio-title">艺人百科 ></text>
+    <text class="bio-content">周杰伦 （Jay Chou） 男/摩羯座/175cm</text>
+    <text class="bio-desc">周杰伦，1979年1月18日出生于台湾省新北市，祖籍福建省永春县，华语流行乐男歌手、音乐人、演员、导演、编剧，毕业于淡江中学。2000年，发行个人首张音乐专辑《Jay》。2001年，凭借专辑《范特西》奠定其融合中西方音乐的风格。2002年，举行“The One”世界巡回演唱会。2003年，成为美国《时代》杂志的封面人物；同年，全亚洲发行音乐专辑《叶惠美》 </text>
+  </view>
+</view>
+</view>
+<import src="/pages/footer.wxml"/>
+<template is="footer"/>

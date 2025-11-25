@@ -1,0 +1,24 @@
+/**app.wxss**/
+.container {
+  background-color: lightgoldenrodyellow;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/* 页脚模板样式*/
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12rpx 0;
+  font-size: 24rpx;
+  color: #666;
+  letter-spacing: 1rpx;
+  background-color: #fff;
+  border-top: 1px solid #eee; 
+}

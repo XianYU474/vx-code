@@ -1,0 +1,7 @@
+<!-- pages/template.wxml -->
+<template name="footer">
+  <view class="footer">
+    <text> | 隐私政策 | 用户协议 |  京ICP备10000001
+© 2025 软件2201李孟泽/云村留声机 </text>
+  </view>
+</template>

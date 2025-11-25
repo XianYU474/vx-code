@@ -1,0 +1,108 @@
+<!-- test/pages/play/play.wxml -->
+<view class="play-page">
+  <!-- 左上角返回按钮 -->
+  <view class="back-btn">
+    <image 
+      src="/images/back.png"  
+      bindtap="goBackToView"
+    ></image>
+  </view>
+
+  <!-- 顶部歌曲信息 -->
+  <view class="top-info">
+    <text class="song-name">{{currentSong.name}}</text>
+    <text class="singer">{{currentSong.singer}}</text>
+  </view>
+
+  <!-- 封面旋转区域 -->
+  <view class="cover-container">
+    <image 
+      class="cover-img" 
+      src="{{currentSong.cover}}" 
+      animation="{{coverAnimation}}"
+    ></image>
+  </view>
+
+  <!-- 歌词滚动区域 -->
+  <view class="lyric-scroll">
+    <scroll-view 
+      scroll-y 
+      style="height: {{lyricHeight}}px;"
+    >
+      <view 
+        wx:for="{{currentSong.lyric}}" 
+        wx:key="index" 
+        class="lyric-item"
+      >
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar">
+    <image 
+      class="control-btn" 
+      src="/images/prev.png" 
+      bindtap="switchSong" 
+      data-type="prev"
+    ></image>
+    <image 
+      class="control-btn play-pause" 
+      src="{{isPlaying ? '/images/pause.png' : '/images/play.png'}}" 
+      bindtap="togglePlay"
+    ></image>
+    <image 
+      class="control-btn" 
+      src="/images/next.png" 
+      bindtap="switchSong" 
+      data-type="next"
+    ></image>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress-area">
+    <text class="time">{{currentTime}}</text>
+    <slider 
+      class="progress-slider" 
+      value="{{progress}}" 
+      min="0" 
+      max="{{duration}}" 
+      bindchange="updateProgress"
+    ></slider>
+    <text class="time">{{durationTime}}</text>
+  </view>
+</view>
+<!-- 评论区模块 -->
+<view class="comment-section">
+  <!-- 评论标题（可选） -->
+  <text class="comment-title">评论区</text>
+
+  <!-- 评论列表（可滚动） -->
+  <scroll-view 
+    class="comment-list" 
+    scroll-y       
+    style="height: 600rpx;" 
+  >
+    <!-- 循环渲染评论 -->
+    <view class="comment-item" wx:for="{{comments}}" wx:key="index">
+      <text class="comment-user">{{item.username}}</text>
+      <text class="comment-content">{{item.content}}</text>
+    </view>
+  </scroll-view>
+
+  <!-- 评论输入区域 -->
+  <view class="comment-input">
+    <textarea 
+      class="comment-textarea" 
+      placeholder="赶紧来评论！！！！" 
+      bindinput="onTextareaChange"
+      value="{{inputValue}}"
+      auto-height
+    ></textarea>
+    <button class="send-btn" bindtap="sendComment">发送</button>
+  </view>
+</view>
+
+<import src="/pages/footer.wxml"/>
+<template is="footer"/>

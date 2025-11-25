@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/view/view",
+    "pages/jay/jay",
+    "pages/play/play",
+    "pages/index/index",
+    "pages/new/new",
+    "pages/logs/logs",
+    "pages/wode/wode"
+    
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "云村留声机",
+    "navigationBarBackgroundColor": "#f00",
+    "navigationStyle": "default",
+    "backgroundColor": "#DB7093",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#f00",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/view/view",
+        "text": "首页",
+        "iconPath": "/images/图标/首页.png",
+        "selectedIconPath": "/images/图标/首页.png"
+      },
+      {
+        "pagePath": "pages/play/play",
+        "text": "播放",
+        "iconPath": "/images/图标/正在播放.png",
+        "selectedIconPath": "/images/图标/正在播放.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "/images/图标/个人信息.png",
+        "selectedIconPath": "/images/图标/个人信息.png"
+      }
+    ]
+  },
+  "debug": false,
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

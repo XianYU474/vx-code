@@ -1,0 +1,25 @@
+<view class="wode-container">
+  <!-- 上半部分：背景 + 头像 + 用户信息 -->
+  <view class="top-section">
+    <image class="bg-img" src="/images/个人/背景.png"></image>
+    <image class="avatar" src="/images/个人/头像.jpg" style="position: absolute; left: 375rpx; top: 208rpx"></image>
+    <view class="user-info" style="position: absolute; left: 375rpx; top: 587rpx">
+      <text class="nickname" style="position: relative; left: 0rpx; top: -236rpx">思念化作鱼</text>
+      <text class="signature" style="position: relative; left: 0rpx; top: -232rpx">你的痛苦我都心疼想为你解决</text>
+      <text class="vip-tag" style="position: relative; left: 130rpx; top: -328rpx">VIP·陆</text>
+    </view>
+  </view>
+
+  <!-- 下半部分：可滑动歌单 -->
+  <scroll-view class="bottom-section" scroll-y>
+    <view class="playlist-item" wx:for="{{playlists}}" wx:key="index">
+      <image class="playlist-cover" src="{{item.cover}}"></image>
+      <view class="playlist-info">
+        <text class="playlist-title">{{item.title}}</text>
+        <text class="playlist-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<import src="/pages/footer.wxml"/>
+<template is="footer"/>
